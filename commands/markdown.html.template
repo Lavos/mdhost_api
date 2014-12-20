@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>{{ .Filename }}</title>
+
+	<link rel="stylesheet" media="all" href="//vmarch.dev:8011/md.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,600,800,400' rel='stylesheet' type='text/css'> 
+	<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/vmcommon/highlight.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+</head>
+
+<body>
+	<div id="master">
+		{{ .Content }}
+	</div><!-- /#master -->
+
+	<div class="tline"></div>
+
+	<script>
+		(function(){
+			$('pre > code').each(function(){
+				hljs.highlightBlock(this);
+			});
+		})();
+	</script>
+</body>
+</html>
